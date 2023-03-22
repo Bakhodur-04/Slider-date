@@ -1,4 +1,20 @@
-# Slider
+# Slider date
+
+Проект развернут на GitHub: https://bakhodur-04.github.io/Slider-date/
+
+## Запуск приложения
+
+После скачивания проекта необходимо выполнить в терминале команду:
+
+`npm install`
+
+Приложение установит все необходимые библиотеки.
+
+Далее необходимо выполнить команду, для запуска приложения:
+
+`ng serve -o`
+
+После чего приложение автоматически откроется по адресу `http://localhost:4200/`.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
