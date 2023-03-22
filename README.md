@@ -1,4 +1,4 @@
-# Slider date
+# Slider date - приложение для отображения слайдера периодов дат.
 
 Проект развернут на GitHub: https://bakhodur-04.github.io/Slider-date/
 
