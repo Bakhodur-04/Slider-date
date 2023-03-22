@@ -19,6 +19,7 @@ export class SliderComponent implements OnInit {
   maxEventYear!: number;
   minEventMonth: number = 0;
   maxEventMonth: number = 0;
+  yearArray: Array<string> = [];
   
   // Массив месяцев
   months: string[] = ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
@@ -56,8 +57,7 @@ export class SliderComponent implements OnInit {
         }
       },
       ticksTooltip: (v: number): string => {
-        console.log('Tooltip for ' + this.minEventMonth);
-        return `Tooltip for ${v}`
+        return `${v} год`
       },
     };
   }
@@ -89,8 +89,7 @@ export class SliderComponent implements OnInit {
           }
         },
         ticksTooltip: (v: number): string => {
-          console.log('Tooltip for ' + this.minEventMonth);
-          return `Tooltip for ${v}`
+          return `${v} год`
         },
       };
     } else if (this.view === 'months') {
@@ -100,9 +99,11 @@ export class SliderComponent implements OnInit {
       let yearStartIndex = this.minEventYear;
       let yearEndIndex = this.maxEventYear;
       let monthsToShow: string[] = [];
+
       for (let i = yearStartIndex; i <= yearEndIndex; i++) {
         monthsToShow = monthsToShow.concat(this.months);
       }
+    
       this.sliderOptions = {
         floor: 0,
         ceil: monthsToShow.length - 1,
@@ -114,8 +115,7 @@ export class SliderComponent implements OnInit {
         tickValueStep: 1,
         translate: (value: number) => monthsToShow[value],
         ticksTooltip: (v: number): string => {
-          console.log('Tooltip for ' + this.minEventMonth);
-          return `Tooltip for ${v}`
+          return `${this.getNameMonth(v)} ${this.getSycleYearArray(monthsToShow)[v]} год`
         },
       };
     }
@@ -133,6 +133,7 @@ export class SliderComponent implements OnInit {
     }
   }
 
+  // Функция для конвертирования значения в название месяца
   getNameMonth(value: number): string {
     let countIteration: number;
     if (value >= 12) {
@@ -144,5 +145,21 @@ export class SliderComponent implements OnInit {
       let kek = this.months[value]
       return kek
     }
+  }
+
+  getSycleYearArray(arr: Array<string>): Array<string> {
+    let currentYear: number = this.minEventYear
+    let endYear: number = this.maxEventYear
+    const monthCount: number = 12;
+    let yearsArray: Array<string> = [];
+    for (let i = currentYear; i <= endYear; i++) {
+      for (let j=0; j < monthCount; j++) {
+        yearsArray.push(String(currentYear))
+      }
+      currentYear += 1
+    }
+    // this.yearArray = this.yearArray.concat(timeArray.map(()=> `${yearStartIndex}`))
+    // yearStartIndex += 1
+    return yearsArray
   }
 }
