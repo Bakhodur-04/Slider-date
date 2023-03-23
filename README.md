@@ -4,7 +4,7 @@
 
 В проекте присутсвуют подсказки(tooltips), для этого необходимо навести курсор на узел слайдера, как в примере ниже:
 
-![Image alt](https://github.com/Bakhodur-04/Slider-date/example.jpg)
+![Image alt](https://github.com/Bakhodur-04/Slider-date/raw/master/example.jpg)
 
 ## Запуск приложения
 
