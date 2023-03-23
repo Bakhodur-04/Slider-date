@@ -19,7 +19,6 @@ export class SliderComponent implements OnInit {
   maxEventYear!: number;
   minEventMonth: number = 0;
   maxEventMonth: number = 0;
-  yearArray: Array<string> = [];
   
   // Массив месяцев
   months: string[] = ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
@@ -29,8 +28,6 @@ export class SliderComponent implements OnInit {
 
   month!: string
   year!: number
-
-  constructor() {}
 
   ngOnInit(): void {
     this.minEventYear = this.minChoosenYear;
@@ -56,9 +53,7 @@ export class SliderComponent implements OnInit {
             return '' + value;
         }
       },
-      ticksTooltip: (v: number): string => {
-        return `${v} год`
-      },
+      ticksTooltip: (v: number): string =>  `${v} год`,
     };
   }
 
@@ -88,11 +83,9 @@ export class SliderComponent implements OnInit {
               return '' + value;
           }
         },
-        ticksTooltip: (v: number): string => {
-          return `${v} год`
-        },
+        ticksTooltip: (v: number): string => `${v} год`,
       };
-    } else if (this.view === 'months') {
+    } else {
       // Отображаем месяцы выбранных годов
       this.minChoosenYear = this.minEventMonth;
       this.maxChoosenYear = this.maxEventMonth;
@@ -114,9 +107,7 @@ export class SliderComponent implements OnInit {
         tickStep: 1,
         tickValueStep: 1,
         translate: (value: number) => monthsToShow[value],
-        ticksTooltip: (v: number): string => {
-          return `${this.getNameMonth(v)} ${this.getSycleYearArray(monthsToShow)[v]} год`
-        },
+        ticksTooltip: (v: number): string => `${this.getNameMonth(v)} ${this.getSycleYearArray()[v]} год`,
       };
     }
   }
@@ -142,24 +133,21 @@ export class SliderComponent implements OnInit {
       return this.months[index]
     }
     else {
-      let kek = this.months[value]
-      return kek
+      return this.months[value]
     }
   }
 
-  getSycleYearArray(arr: Array<string>): Array<string> {
+  getSycleYearArray(): Array<string> {
     let currentYear: number = this.minEventYear
-    let endYear: number = this.maxEventYear
+    const endYear: number = this.maxEventYear
     const monthCount: number = 12;
-    let yearsArray: Array<string> = [];
+    const yearsArray: Array<string> = [];
     for (let i = currentYear; i <= endYear; i++) {
       for (let j=0; j < monthCount; j++) {
         yearsArray.push(String(currentYear))
       }
       currentYear += 1
     }
-    // this.yearArray = this.yearArray.concat(timeArray.map(()=> `${yearStartIndex}`))
-    // yearStartIndex += 1
     return yearsArray
   }
 }

@@ -1,11 +1,11 @@
 <div class="slider">
     <div class="slider__btn-switch">
-        <button #yearInput class="btn slider__btn" 
+        <button class="btn slider__btn" 
             [ngClass]="view == 'years' ? 'active' : ''"
             (click)="changeView('years')"
         >Все года</button>
 
-        <button #monthInput class="btn slider__btn"
+        <button class="btn slider__btn"
             [ngClass]="view == 'months' ? 'active' : ''" 
             (click)="changeView('months')"
         >Месяца</button>

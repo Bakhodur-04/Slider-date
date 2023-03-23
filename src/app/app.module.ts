@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SliderModule } from './slider/slider.module';
 
@@ -11,7 +10,6 @@ import { SliderModule } from './slider/slider.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SliderModule,
   ],
   providers: [],

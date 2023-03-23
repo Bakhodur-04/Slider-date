@@ -7,6 +7,12 @@
     background-color: #ffffff;
 }
 
+::ng-deep {
+    .slider .ngx-slider {
+        display: block;
+    }
+}
+
 .slider__btn {
     border: none;
     background-color: #ffffff;
@@ -50,6 +56,13 @@
 @media (max-width: 1280px) {
     .slider {
         padding: 15px 15px 30px;
+        font-size: 12px;
+    }
+
+    ::ng-deep {
+        .slider .ngx-slider .ngx-slider-inner-tooltip {
+            transform: rotate(-90deg);
+        }
     }
 }
 
@@ -57,9 +70,9 @@
     .slider {
         height: 135px;
         padding: 5px 10px 20px;
-        font-size: small;
+        font-size: 12px;
     }
-
+    
     .slider__btn-switch {
         width: 80px;
     }
@@ -67,8 +80,8 @@
 
 @media (max-width: 800px) {
     .slider {
-        font-size: 10px;
-        height: 117px;
+        font-size: 11px;
+        height: 110px;
         padding: 5px 10px 20px;
     }
 
