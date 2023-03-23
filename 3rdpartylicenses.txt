@@ -35,9 +35,6 @@ MIT
 @angular/platform-browser
 MIT
 
-@angular/router
-MIT
-
 detect-it
 MIT
 The MIT License (MIT)
