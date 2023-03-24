@@ -2,14 +2,20 @@
     padding: 25px 25px 40px;
     display: flex;
     align-items: center;
-    height: 160px;
+    height: 235px;
     border-radius: 10px;
     background-color: #ffffff;
+    font-size: 14px;
 }
 
 ::ng-deep {
     .slider .ngx-slider {
         display: block;
+    }
+
+    .slider .ngx-slider .ngx-slider-inner-tooltip {
+        transform: rotate(-90deg);
+        padding-right: 20px;
     }
 }
 
@@ -58,17 +64,11 @@
         padding: 15px 15px 30px;
         font-size: 12px;
     }
-
-    ::ng-deep {
-        .slider .ngx-slider .ngx-slider-inner-tooltip {
-            transform: rotate(-90deg);
-        }
-    }
 }
 
 @media (max-width: 1024px) {
     .slider {
-        height: 135px;
+        height: 195px;
         padding: 5px 10px 20px;
         font-size: 12px;
     }
@@ -80,9 +80,8 @@
 
 @media (max-width: 800px) {
     .slider {
-        font-size: 11px;
-        height: 110px;
         padding: 5px 10px 20px;
+        font-size: 11px;
     }
 
     .slider__btn {
