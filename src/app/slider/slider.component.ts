@@ -65,8 +65,8 @@ export class SliderComponent implements OnInit {
   public changeView(view: string) {
     this.view = view;
     if (this.view === 'years') {
-      this.minChoosenYear = this.minEventYear;
-      this.maxChoosenYear = this.maxEventYear
+      this.minChoosenYear = Number(this.getСycleYearArray()[this.minEventMonth]);
+      this.maxChoosenYear = Number(this.getСycleYearArray()[this.maxEventMonth]);
       // Отображаем года
       this.sliderOptions = {
         ...this.sliderCommonOptions,
