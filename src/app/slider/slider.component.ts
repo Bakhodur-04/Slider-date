@@ -107,13 +107,13 @@ export class SliderComponent implements OnInit {
 
   // Функция для конвертирования значения в название месяца
   getNameMonth(value: number): string {
-    if (value <= 12) {
-      if (value == 12) return this.months[0]
+    if (value < 12) {
       return this.months[value]
     }
     else {
       let countIteration: number = Math.ceil(value / 12)
       let index = value - (12 * (countIteration - 1))
+      if (index % 12 == 0) return this.months[0]
       return this.months[index]
     }
   }
